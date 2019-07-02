@@ -171,7 +171,7 @@ def crawling_goobne():
     wd.quit()
 
 if __name__ == '__main__':
-    print(os.path.abspath(__file__))
+    # print(os.path.abspath(__file__))
     # print(os.path.relpath(__file__))
     # print(os.getcwd())
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
     # crawling_kyochon()
 
     # nene 과제
-    # crawling_nene()
+    crawling_nene()
 
     # 굽네치킨
     # crawling_goobne()
