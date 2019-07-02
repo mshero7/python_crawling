@@ -1,6 +1,7 @@
 import ssl
 import sys
 import time
+import os
 
 import pandas as pandas
 
@@ -12,6 +13,7 @@ from bs4 import BeautifulSoup
 
 from collection import crawler
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def crawling_kyochon():
     results =[]
@@ -127,7 +129,7 @@ def crawling_nene():
 
     # store
     table = pandas.DataFrame(result_set, columns=['name', 'address'])
-    table.to_csv('__results__/nene.csv', encoding='utf-8', mode='w', index=True)
+    table.to_csv('/crawling-results/nene.csv', encoding='utf-8', mode='w', index=True)
     print(table)
 
     # for result in result_set:
@@ -169,12 +171,15 @@ def crawling_goobne():
     wd.quit()
 
 if __name__ == '__main__':
+    print(os.path.abspath(__file__))
+    # print(os.path.relpath(__file__))
+    # print(os.getcwd())
 
     # 교촌
     # crawling_kyochon()
 
     # nene 과제
-    crawling_nene()
+    # crawling_nene()
 
     # 굽네치킨
     # crawling_goobne()
